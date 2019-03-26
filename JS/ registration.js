@@ -7,6 +7,14 @@ const checkboxUI = document.getElementById("terms")
 const submitBtnUI = document.getElementById("submit")
 const passwordUI = document.getElementById("psw")
 
+/* if (localStorage.getItem("users") === null) {
+    users = [];
+} else {
+    users = JSON.parse(localStorage.getItem("users"));
+    for (let i = 0; i < users.length; i++) {
+        users[i] = new User(users[i].firstName, users[i].lastName, users[i].email, users[i].password);
+    }
+} */
 
 //Trigger the click button
 
@@ -14,12 +22,13 @@ submitBtnUI.onclick = function (){
    console.log('clicked')
    console.log(users)
     
-var firstName = firstNameUI.value
-var lastName = lastNameUI.value
-var email = emailUI.value
-var password = passwordUI.value
+var firstName = firstNameUI.value;
+var lastName = lastNameUI.value;
+var email = emailUI.value;
+var password = passwordUI.value;
 var regEmail = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
 var regPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
+
 // the password string must contain at least 1 lowercase, 1 uppercase, 1 numeric character, 1 special characters, at least 8 characters long
 
 // if the user doesn't input anything but clicks on the complete registration button, we let him know that he has to input something
@@ -55,8 +64,8 @@ var regPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,}
             alert("The first letter must be a capital letter.");
             return false
         }
-       
-    if (regEmail.test(email)) {
+
+    if (regEmail.test(email) && email.endsWith("com")) {
         // check if the email address contains an @ character and makes sure there are characters beofre and after such sign
         console.log("The user has entered a valid email address");
         }  
@@ -70,6 +79,7 @@ var regPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,}
         
         // if the passowrd satisfies all criteria, then the user is saved to the users array on the local machine
         users.push(new User(firstName, lastName, email, password))
+        //localStorage.setItem("users", JSON.stringify("users"));
         console.log("The user has selected a strong password.")
         alert("You are successfully registered to our website, you can now sign in =)")
         window.location.href = "login.html" // the user gets redirected to the signin page - we cannot use window.location.assign('') because our new page is not an url, but just an html document

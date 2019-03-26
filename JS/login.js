@@ -13,14 +13,25 @@ if (emailSignin.length < 1 || passwordSignin.length < 1) {
     return false;
 }
 
+var trials = 3
+
 for (var i = 0; i < users.length; i ++) {
-    if (emailSignin == users[i].email && passwordSignin == users[i].password) {
-        alert("You are loged in.");
-        return true;
+
+  if (emailSignin == users[i].email && passwordSignin == users[i].password) {
+      localStorage.setItem("users", JSON.stringify("users"))
+      alert("You successfully logged in.");
+      return true;
     } 
+    else if(trials == 0) {
+      alert("No login attempts available.")
+      email.disabled = true;
+      password.disabled = true;
+      SignInBtn.disabled = true;
+    }
     else {
-      alert("The email address or password is not correct, please try again.");
+      trials--;
+      alert("Login failed. Now you have" + trials + " attemps available.");
       return false
-      } 
+         } 
     }
 }
