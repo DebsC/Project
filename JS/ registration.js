@@ -18,7 +18,7 @@ const passwordUI = document.getElementById("psw")
 
 //Trigger the click button
 
-submitBtnUI.onclick = function (){
+submitBtnUI.onclick = function () {
    console.log('clicked')
    console.log(users)
     
@@ -79,7 +79,7 @@ var regPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,}
         
         // if the passowrd satisfies all criteria, then the user is saved to the users array on the local machine
         users.push(new User(firstName, lastName, email, password))
-        //localStorage.setItem("users", JSON.stringify("users"));
+        localStorage.setItem("users", JSON.stringify(users));
         console.log("The user has selected a strong password.")
         alert("You are successfully registered to our website, you can now sign in =)")
         window.location.href = "login.html" // the user gets redirected to the signin page - we cannot use window.location.assign('') because our new page is not an url, but just an html document

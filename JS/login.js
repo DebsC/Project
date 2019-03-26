@@ -18,7 +18,7 @@ var trials = 3
 for (var i = 0; i < users.length; i ++) {
 
   if (emailSignin == users[i].email && passwordSignin == users[i].password) {
-      localStorage.setItem("users", JSON.stringify("users"))
+      // localStorage.setItem("users", JSON.stringify("users"))
       alert("You successfully logged in.");
       return true;
     } 
