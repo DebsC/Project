@@ -2,6 +2,11 @@
 
 var SignInBtn = document.getElementById("signin")
 
+var storedUsers = JSON.parse(localStorage.getItem("users"))
+console.log(storedUsers)
+
+var trials = 3
+
 SignInBtn.onclick = function() {
 console.log("clicked")
 
@@ -13,25 +18,23 @@ if (emailSignin.length < 1 || passwordSignin.length < 1) {
     return false;
 }
 
-var trials = 3
-
-for (var i = 0; i < users.length; i ++) {
-
-  if (emailSignin == users[i].email && passwordSignin == users[i].password) {
+for (var i = 0; i < storedUsers.length; i ++) {
+  if (emailSignin == storedUsers[i].email && passwordSignin == storedUsers[i].password) {
       // localStorage.setItem("users", JSON.stringify("users"))
       alert("You successfully logged in.");
       return true;
     } 
-    else if(trials == 0) {
-      alert("No login attempts available.")
-      email.disabled = true;
-      password.disabled = true;
-      SignInBtn.disabled = true;
-    }
-    else {
-      trials--;
-      alert("Login failed. Now you have" + trials + " attemps available.");
-      return false
-         } 
-    }
+}
+
+if(trials == 0) {
+  alert("No login attempts available.")
+  document.getElementById("emailsignin").disabled = true;
+  document.getElementById("pswsignin").disabled = true;
+  SignInBtn.disabled = true;
+  return false
+} else {
+  trials--;
+  alert("Login failed. Now you have " + trials + " attemps available.");
+  return false
+    } 
 }
