@@ -27,19 +27,18 @@ body {
 
    body {
     font-family: 'Roboto', sans-serif;
-    color: rgb(255, 44, 44);
+    color: black;
   }
 
   /*style textboxes*/
 
   input {
-    width: 100%;
+    width: 80%;
     padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid #CCC;
     box-sizing: border-box;
-    margin-top: 6px;
     margin-bottom: 16px;
+    margin-left: 36px;
   }
   
   /* Style the submit button */
@@ -47,25 +46,43 @@ body {
     background-color: #990000;
     color: white;
   }
-  
-  /* Style the container for inputs */
-  .container {
-    background-color: #f1f1f1;
-    padding: 20px;
-  }
-  
-  .content {
-    width: 300px;
-    min-height: 100%;
-    margin: auto;
-    font-size: 12px;
-  }
+
 
 #nav-button {
     background-color: red;
     padding: 2px;
     margin-top: 5px;
     min-width: 50px;
-    
+}
 
+.container1 {
+  background-color: white;
+  width: 400px;
+  height: 570px;
+  border-radius: 03px;
+  margin: 0 auto;
+  border-bottom: 1px solid #CCC;
+  margin-top: 50px;
+}
+
+.container2 {
+  background-color: white;
+  width: 400px;
+  height: 280px;
+  border-radius: 03px;
+  margin: 0 auto;
+  border-bottom: 1px solid #CCC;
+  margin-top: 50px;
+}
+
+.paragraph {
+  font-family: "Roboto", sans-serif, bold;
+  text-align: center;
+  border-radius: 03px;
+  padding: 15px 0px 0px 0px;
+}
+
+.terms
+{
+   margin-left: 33px;
 }

@@ -7,15 +7,6 @@ const checkboxUI = document.getElementById("terms")
 const submitBtnUI = document.getElementById("submit")
 const passwordUI = document.getElementById("psw")
 
-/* if (localStorage.getItem("users") === null) {
-    users = [];
-} else {
-    users = JSON.parse(localStorage.getItem("users"));
-    for (let i = 0; i < users.length; i++) {
-        users[i] = new User(users[i].firstName, users[i].lastName, users[i].email, users[i].password);
-    }
-} */
-
 //Trigger the click button
 
 submitBtnUI.onclick = function () {
@@ -79,7 +70,7 @@ var regPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,}
         
         // if the passowrd satisfies all criteria, then the user is saved to the users array on the local machine
         users.push(new User(firstName, lastName, email, password))
-        localStorage.setItem("users", JSON.stringify(users));
+        localStorage.setItem("users", JSON.stringify(users)); // string because the local storage can only store strings values
         //console.log("The user has selected a strong password.")
         alert("You are successfully registered to our website, you can now sign in =)") 
         window.location.href = "login.html" // the user gets redirected to the signin page - we cannot use window.location.assign('') because our new page is not an url, but just an html document
