@@ -20,7 +20,7 @@ if (emailSignin.length < 1 || passwordSignin.length < 1) {
 
 for (var i = 0; i < storedUsers.length; i ++) {
   if (emailSignin == storedUsers[i].email && passwordSignin == storedUsers[i].password) {
-      // localStorage.setItem("users", JSON.stringify("users"))
+      window.location.href= "events.html";
       alert("You successfully logged in.");
       return true;
     } 
