@@ -2,7 +2,7 @@
 .navbar{ background:#000000;}
 .nav-link , .navbar-brand{ color: #f4f4f4; cursor: pointer;}
 .nav-link{ margin-right: 1em !important;}
-.nav-link:hover{ background: #f4f4f4; color: #f97300; }
+.nav-link:hover{ background: #f4f4f4; color:#990000; }
 .navbar-collapse{ justify-content: flex-end;}
 .navbar-toggler{  background:#fff !important;}
 
@@ -40,16 +40,9 @@ body {
     margin-bottom: 16px;
     margin-left: 36px;
   }
-  
-  /* Style the submit button */
-  input[type=submit] {
-    background-color: #990000;
-    color: white;
-  }
-
 
 #nav-button {
-    background-color: red;
+    background-color: #990000;
     padding: 2px;
     margin-top: 5px;
     min-width: 50px;
@@ -78,11 +71,7 @@ body {
 .paragraph {
   font-family: "Roboto", sans-serif, bold;
   text-align: center;
-  border-radius: 03px;
-  padding: 15px 0px 0px 0px;
+  padding: 12px 0px 0px 0px;
 }
 
-.terms
-{
-   margin-left: 33px;
-}
+.terms input[type="checkbox"]{display:inline-block;}

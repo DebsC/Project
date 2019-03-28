@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/concerts.css">
 
 
-    <title>Document</title>
+    <title>Concerts</title>
 
 </head>
 <body>
-    <h1>
-    </h1>
+    
  <!-- navbar -->
  <nav class="navbar navbar-expand-lg fixed-top ">
     <a class="navbar-brand" href="#">Highlights</a>
@@ -36,8 +35,8 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
         </li>
-        <li >
-          <button id="nav-button">Here</button> 
+        <li class="nav-item">
+          <a id="nav-button" class="nav-link" href="#">Account</a> 
         </li>
 
       </ul>
@@ -45,13 +44,65 @@
   </nav>
   
 <!--- input fields -->
-<div class="content">
-    <p class="paragraph"></p>
-    <div>
+<div class="title">
+  <h1>Start your search for incredible experiences</h1>
+</div>
+
+<select name="dropdown" id="dropDown1" class="filterElements">
+  <option value="Choose your Artist">Choose your Artist</option>
+  <option value="All">All</option>
+  <option value="Ariana Grande">Ariana Grande</option>
+  <option value="A$AP Rocky">A$AP Rocky</option>
+  <option value="Billy Lockett">Billy Lockett</option>
+  <option value="Blossoms">Blossoms</option>
+  <option value="Calcutta">Calcutta</option>
+  <option value="Disclosure">Disclosure</option>
+  <option value="Dua Lipa">Dua Lipa</option>
+  <option value="Gorillaz">Gorillaz</option>
+  <option value="Jorja Smith">Jorja Smith</option>
+  <option value="Kasabian">Kasabian</option>
+  <option value="Kendrick Lamar">Kendrik Lamar</option>
+  <option value="Liam Gallagher">Liam Gallagher</option>
+  <option value="Loyle Carner">Loyle Carner</option>
+  <option value="Macklemore">Macklemore</option>
+  <option value="Mura Masa">Mura Masa</option>
+  <option value="Nothing But Thieves">Nothing But Thieves</option>
+  <option value="Sam Smith">Sam Smith</option>
+  <option value="Tom Grennan">Tom Grennan</option>
+</select>
+
+<select name="dropdown" id="dropDown2" class="filterElements">
+  <option value="Category">Music Genre</option>
+  <option value="All">All</option>
+  <option value="Alternative">Alternative</option>
+  <option value="Blues">Blues</option>
+  <option value="Country">Country</option>
+  <option value="Dance">Dance</option>
+  <option value="Electronic">Electronic</option>
+  <option value="Disclosure">Disclosure</option>
+  <option value="Hip-Hop/Rap">Hip-Hop / Rap</option>
+  <option value="Jazz">Jazz</option>
+  <option value="Latin">Latin</option>
+  <option value="Pop">Pop</option>
+  <option value="R&B/Soul">R&B / Soul</option>
+  <option value="Rock">Rock</option>
+</select>
+
+<input type="date" id="calendar">
+<input type="search" name="q" placeholder="Search">
+<div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="#">Concert 1</a>
+      <a href="#">Concert 2</a>
+      <a href="#">Concert 3</a>
+    </div>
+</div>
 
 </body>
 
 <script src="JS/user.js"></script>
 <script src="JS/database.js"></script>
 <script src="JS/login.js"></script>
+<script src="JS/events.js"></script>
 </html>
