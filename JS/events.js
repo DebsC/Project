@@ -48,9 +48,3 @@ function myFunction() {
 https://www.geeksforgeeks.org/javascript-addeventlistener-with-examples/
 https://gomakethings.com/checking-event-target-selectors-with-event-bubbling-in-vanilla-javascript/
 */
-
-const searchBtn = document.getElementById("searchbtn")
-
-searchBtn.onclick = function() {
-  var myArtist = document.getElementById()
-}
