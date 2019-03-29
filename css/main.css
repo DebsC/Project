@@ -52,11 +52,12 @@
 
 .navbar-login-button-top:hover {
   color: white;
-  background-color transparent;
+  background-color: transparent;
   border: solid 1px #5ca8ee;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
+
 .navbar-signup-button-top {
   display: flex;
     justify-content: center;
@@ -175,3 +176,4 @@ body {
   background-color: #fff;
   border: 1px solid #fff;
 }
+
