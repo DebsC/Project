@@ -13,15 +13,15 @@ function getLocation() {
 function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude; 
-} */
+}
 
 // Filter through an array of objects of a dropdown menu
 
 // https://www.w3schools.com/howto/howto_js_dropdown.asp 
 // https://stackoverflow.com/questions/35936365/what-exactly-is-the-parameter-e-event-and-why-pass-it-to-javascript-functions
 
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
+When the user clicks on the button, 
+toggle between hiding and showing the dropdown content
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
   }
@@ -45,6 +45,12 @@ function myFunction() {
     }
   }
 
-// https://www.geeksforgeeks.org/javascript-addeventlistener-with-examples/
-// https://gomakethings.com/checking-event-target-selectors-with-event-bubbling-in-vanilla-javascript/
+https://www.geeksforgeeks.org/javascript-addeventlistener-with-examples/
+https://gomakethings.com/checking-event-target-selectors-with-event-bubbling-in-vanilla-javascript/
+*/
 
+const searchBtn = document.getElementById("searchbtn")
+
+searchBtn.onclick = function() {
+  var myArtist = document.getElementById()
+}

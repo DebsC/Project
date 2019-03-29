@@ -1,4 +1,4 @@
-class Concerts{ // the class is like an object creation factory
+/* class Concerts{ // the class is like an object creation factory
     constructor(concert, artist, genre, location, dateConcert) { // keys of a class
         this.concert = concert;
         this.artist = artist;
@@ -6,7 +6,7 @@ class Concerts{ // the class is like an object creation factory
         this.location = location;
         this.date = dateConcert;
     }
-}
+} */
 
 var Concerts = [{
     concert: "Sweetener European Tour",
@@ -19,23 +19,23 @@ var Concerts = [{
     artist: "A$AP Rocky",
     genre: "Hip-Hop / Rap",
     location:"Stockholm",
-    date:"17 October 2019",
+    date: new Date(2019, 8, 17),
 }, {
     concert: "#billylockettEUtour",
     artist: "Billy Lockett",
     genre: "Pop",
     location:"Copenhagen",
-    date:"31 March 2019",
+    date: new Date(2019, 2, 31),
 }, {
     concert: "Reading Festival",
     artist: "Blossoms",
     genre: "Alternative",
     location:"Reading",
-    date:"25 November 2019",
+    date: new Date(2019, 10, 25),
 }, {
     concert: "Sweetener European Tour",
     artist: "Calcutta",
     genre: "Alternative",
     location:"Milan",
-    date:"03 August 2019",
+    date: new Date(2019, 7, 3),
 }]
