@@ -77,7 +77,7 @@ var regPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,}
     } 
     
     else {
-        // if the passowrd doesn't satisfy the criteria, then he must choose a new password in order to sign up - display a message tellign the user the password requirements
+        // if the password doesn't satisfy the criteria, then he must choose a new password in order to sign up - display a message tellign the user the password requirements
         alert("The password must be at least 8 characters long and it must contain at least one uppercase, one lowercase, one number and one special characters among the following: @, #, *, ...")
         return false
     }
