@@ -2,6 +2,7 @@ const searchBtn = document.getElementById("searchbtn");
 const artistTag = document.getElementById("dropDown1");
 const genreTag = document.getElementById("dropDown2");
 const locationTag = document.getElementById("dropDown3");
+const searchBox = document.getElementById("searchbox");
 
 // create a variable filters that allows us to filter the events according to artist, genre, location and date - use empty strings as default value 
 // object with different properties (same as the ones specified in the class of concerts)
@@ -10,7 +11,7 @@ var filters = {
     genre: '',
     location: '',
     date: '',
-    searchText: ''
+   // searchText: ''
 }
 
 // creating a filtered array based on the user selection
@@ -31,7 +32,7 @@ const filterEvents = function(arrayOfConcerts, filter) {
 }
 
 // searchBtn.onclick
-artistTag.onchange = function () {
+searchBtn.onclick = function () {
     // Read out the search criteria & update our filters object
     // the function recognised which option has been selected by the user for each filter
     
@@ -39,6 +40,7 @@ artistTag.onchange = function () {
     filters.artist = artistTag.value
     filters.genre = genreTag.value
     filters.location = locationTag.value
+    //filters.searchText = searchBox.value
 
     // we use the filterEvents function to create a filtered array with only
     // the concerts that match the search values
@@ -69,3 +71,71 @@ renderHTML(concerts)
 
 // this shows the final results of the search - the search can restart many times - try to link to the buy tickets button
 // search on stack overflow for some help
+
+//searchBox = document.getElementById("searchbox")
+//var regSearchBox;
+// var filterSearch = {
+  //  artists:'',
+    //location:'',
+    //genre: '',
+  //  price:'',}
+// must refer to the renderConcert() function
+
+//searchBox.onkeypress = function() {
+ //  console.log("keys");
+ //  var typing;
+ // what the users types in the box must be equal/included in the concert.artist (and other properties)
+  // if (typing.includes(filters.artist) || typing.includes(filters.genre) || typing.includes(filter.location))
+
+
+//var newArray = concerts.filter()
+
+/*const searchBox = document.getElementById("searchbox")
+
+searchBox.onkeyup = function() {
+    var searchterm = searchBox.value;
+    document.getElementById("events").innerHTML = searchresult
+    if (searchterm != "") {
+        alert("You should type something")
+    } else if () {
+    
+    
+    }
+} */
+
+/*const searchText = document.getElementById("searchbox")
+var searchTerms = input.searchText.value
+
+const searchEvents = function(ListOfConcerts, searchTerm) {
+    const searchedConcerts = ListOfConcerts.filter(function(concert) {
+    return concert.artist.includes(searchTerm)
+    }) 
+    return searchedConcerts
+}
+
+searchText.onkeypress = function() {
+   const searchedConcerts = searchEvents(concerts, searchTerms)
+   renderHTML(searchedConcerts)
+}
+
+renderHTML(concerts) */
+
+// https://www.youtube.com/watch?v=3NG8zy0ywIk 
+
+const searchText = document.getElementById("searchbox")
+
+searchText.addEventListener("keyup", function(typing) {
+
+const term = typing.target.value.toLowerCase()
+const listOfConcerts = document.getElementById("events")
+const events = listOfConcerts.getElementsByTagName("td")
+
+Array.from(events).forEach(function(concert) {
+    const item = concert.firstElementChild.textContent;
+    if (item.toLowerCase().indexOf(term) != -1) {
+        concert.style.display = "block";
+    } else {
+        concert.style.display = "none"
+    }
+})
+})
