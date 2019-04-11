@@ -59,9 +59,9 @@ searchBtn.onclick = function() {
 }
 
 searchBox.addEventListener("input", function(e) {
-    const e = 
-    console.log("mouse hovered over search box")
-})
+    const typing = e.target.value.toLowerCase()
+    return filtering(typing)
+    })
 
 
 
