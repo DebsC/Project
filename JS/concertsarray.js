@@ -85,7 +85,6 @@ renderHTML(concerts)
 // search on stack overflow for some help
 
 
-
 //var newArray = concerts.filter()
 
 /*const searchBox = document.getElementById("searchbox")
