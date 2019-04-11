@@ -4,17 +4,17 @@ const renderWishlistElement = (concert) => {
 }
 
 // Create a function that generates the DOM structure
-const generateWishlistDOM = () => {
-    const WISHlist = getWishlist()
+// const generateWishlistDOM = () => {
+//     const WISHlist = getWishlist()
 
-    let html = ''
+//     let html = ''
 
-    if (WISHlist.length === 0) {
-        html = `<h3>No items in the wishlist</h3>`
-    } else {
-        WISHlist.forEach((concert) => {
-            html += renderWishlistElement(concert)
-        })
-    }
-    document.getElementById("wishlist-content").innerHTML = html
-}
+//     if (WISHlist.length === 0) {
+//         html = `<h3>No items in the wishlist</h3>`
+//     } else {
+//         WISHlist.forEach((concert) => {
+//             html += renderWishlistElement(concert)
+//         })
+//     }
+//     document.getElementById("wishlist-content").innerHTML = html
+// }

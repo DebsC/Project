@@ -1,4 +1,4 @@
-generateWishlistDOM()
+//generateWishlistDOM()
 
 const buttons = document.getElementsByClassName('add-to-wl')
 console.log(buttons);
