@@ -12,8 +12,7 @@ class Concert{ // the class is like an object creation factory
     // adding a method to the constructor
     // this function (which could be called in any way) allows to show the "table" of concerts and we put the html commands on the js itself
     renderConcert() {
-        // var img = "https://media4.s-nbcnews.com/j/newscms/2019_07/2746596/190208-ariana-grande-mc-1535_163b7df03fbfa03ba35bc8828f9eb918.fit-760w.JPG"
-        return '<tr style="background:white"><td><img src="' + this.img + '" height="200px" width="280px"></td><td><h1>'+ this.artist +'</h1><p>Location:'+this.location+'</p><p>Price:'+this.price+'</p></td><td><input type="number" class="quantity" min="1" max="6" value="1"><button data-id='+this.id+' class="add-wl-btn">Add to Wishlist</button></td></tr>'
+        return `<tr style="background:white"><td><img src="${this.img}" height="200px" width="280px"></td><td><h1>${this.artist}</h1><p>Location:${this.location}</p><p>Price:${this.price}</p></td><td><input type="number" class="quantity" min="1" max="6" value="1"></td><td><button data-id="${this.id}" class="add-wl-btn">Add to Wishlist</button></td></tr>`
     }
 }
 
@@ -29,4 +28,3 @@ var concerts = [new Concert("Ariana Grande", "Pop", "Paris", new Date(2019, 5, 1
                 new Concert("Alvaro Soler", "Latin", "Madrid", new Date(2019, 9, 14), "33", "./Images/alvaro-soler.jpeg", "as123"),
                 new Concert("Dolly Parton", "Country", "Los Angeles", new Date(2019, 4, 11), "29", "./Images/dolly-parton.jpeg", "dp123"),
                 new Concert("Norah Jones", "Jazz", "Zurich", new Date(2019, 2, 11), "13", "./Images/norah-jones.jpg", "nj123")]
-

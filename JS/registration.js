@@ -84,3 +84,13 @@ var regPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,}
 }
 
 console.log(users)
+
+let registeredUserEmail = users.find(function(user) {
+    return user.email == newUseremail;
+});
+
+if (!registeredUserEmail) {
+    console.log("email not registered yet");
+} else {
+    console.log("email already registered")
+}

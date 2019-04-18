@@ -1,3 +1,20 @@
+/* const findCurrentUser = (arrayOfUsers, number) => {
+    const myUser = arrayOfUsers.filter(function(StoredUser) {
+    const StoredUser.id == id
+})
+return myUser
+}
+
+for (var i = 0; i < storedUsers.length; i ++) {
+    if (storedUsers[i].id == currentUser.id) {
+        window.location.href= "wishlist.html";
+        alert("your personla wishlist");
+        return true;
+      } 
+  }
+*/
+
+
 const searchBtn = document.getElementById("searchbtn");
 const artistTag = document.getElementById("dropDown1");
 const genreTag = document.getElementById("dropDown2");
@@ -63,11 +80,9 @@ searchBox.addEventListener("input", function(e) {
     return filtering(typing)
     })
 
-
-
-// the parameter could be called anytype - but needs to be specified
+    // the parameter could be called anytype - but needs to be specified
 function renderHTML(list) {
-    var html = ''
+    var html = ""
 // we introduce the var html='' empty to make sure that the function erases the whole list of concerts available everytime the user launches a search
 // and shows only the concerts that successfully matches the search criteria
     for(let i = 0; i < list.length; i++) {
@@ -81,59 +96,49 @@ function renderHTML(list) {
 // prints the concert/s that successfully match the user's search
 renderHTML(concerts)
 
-// this shows the final results of the search - the search can restart many times - try to link to the buy tickets button
-// search on stack overflow for some help
 
 
-//var newArray = concerts.filter()
 
-/*const searchBox = document.getElementById("searchbox")
 
-searchBox.onkeyup = function() {
-    var searchterm = searchBox.value;
-    document.getElementById("events").innerHTML = searchresult
-    if (searchterm != "") {
-        alert("You should type something")
-    } else if () {
-    
-    
+let wishlist = []
+
+const findConcertById = (arrayofconcerts, id) => {
+    const concert = arrayofconcerts.filter(function(concert) {
+    return concert.id == id
+})
+   return concert
+}
+
+
+
+const addToWishlist = (id, quant) => {
+    console.log(`${id} concert has been added to your wishlist`);
+    if (!findConcertById(wishlist, id)) {
+        wishlist.push({...findConcertById(concerts, id), quantity: quant})
+    } else {
+        findConcertById(wishlist, id).quantity += quant
     }
-} */
-
-/*const searchText = document.getElementById("searchbox")
-var searchTerms = input.searchText.value
-
-const searchEvents = function(ListOfConcerts, searchTerm) {
-    const searchedConcerts = ListOfConcerts.filter(function(concert) {
-    return concert.artist.includes(searchTerm)
-    }) 
-    return searchedConcerts
+    saveWishlist()
 }
 
-searchText.onkeypress = function() {
-   const searchedConcerts = searchEvents(concerts, searchTerms)
-   renderHTML(searchedConcerts)
+const loadWishlist = function() {
+    if (localStorage.getItem("wishlist") === null) {
+        wishlist = []
+    } else {
+        wishlist = JSON.parse(localStorage.getItem("wishlist"))
+    }
 }
 
-renderHTML(concerts) */
+// Create a function that saves your wishlist to localStorage
+const saveWishlist = () => {
+    localStorage.setItem("wishlist", JSON.stringify(wishlist))
+}
 
-// https://www.youtube.com/watch?v=3NG8zy0ywIk 
+// Create a function that returns the current shopping cart
+const getWishlist = () => {
+    return wishlist
+}
 
-// const searchText = document.getElementById("searchbox")
 
-// searchText.addEventListener("keyup", function(typing) {
-
-//     const term = typing.target.value.toLowerCase()
-//     const listOfConcerts = document.getElementById("events")
-//     const events = listOfConcerts.getElementsByTagName("td")
-    
-    
-// Array.from(events).forEach(function(concert) {
-//     const text = concert.firstElementChild.textContent;
-//     if (text.toLowerCase().indexOf(term) != -1) {
-//         concert.style.display = "block";
-//     } else {
-//         concert.style.display = "none"
-//     }
-// })
-// })
+// Make sure to load the wishlist array
+loadWishlist()

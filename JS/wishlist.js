@@ -1,4 +1,4 @@
-let wishlist = []
+/* let wishlist = []
 const findConcertById = (arrayOfConcerts, id) => {
     const concert = arrayOfConcerts.find((concert) => {
            return concert.id === id
@@ -9,7 +9,7 @@ const findConcertById = (arrayOfConcerts, id) => {
 
 const addToWishlist = (id, quant) => {
     console.log(`Tickets for ${id} concert have been added to the wishlist`);
-
+debugger
     if (!findConcertById(wishlist, id)) {
         wishlist.push({...findConcertById(concerts, id), quantity: quant})
     } else {
@@ -42,4 +42,4 @@ const getWishlist = () => {
 
 // Make sure to load the wishlist array
 
-loadWishlist()
+loadWishlist() */
