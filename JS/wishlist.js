@@ -1,21 +1,23 @@
 let wishlist = []
 
-const findConcertById = (data, id) => {
-    const concert = data.find((concert) => {
+const findConcertById = (arrayOfConcerts, id) => {
+    const concert = arrayOfConcerts.find((concert) => {
            return concert.id === id
     })
     return concert
 }
 
-const addToWishlist = (id) => {
-    console.log(`${id} has been added to the wishlist`);
+
+const addToWishlist = (id, quant) => {
+    console.log(`Tickets for ${id} concert have been added to the wishlist`);
     if (!findConcertById(wishlist, id)) {
-        wishlist.push({...findConcertById(concerts, id)})
+        wishlist.push({...findConcertById(concerts, id), quantity: quant})
     } else {
-        console.log("nothing")
+        findProductById(cart, id).quantity += quant
     }
     saveWishlist()
 }
+
 
 const loadWishlist = function() {
     if (localStorage.getItem("wishlist") === null) {

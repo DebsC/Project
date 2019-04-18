@@ -13,7 +13,7 @@ class Concert{ // the class is like an object creation factory
     // this function (which could be called in any way) allows to show the "table" of concerts and we put the html commands on the js itself
     renderConcert() {
         // var img = "https://media4.s-nbcnews.com/j/newscms/2019_07/2746596/190208-ariana-grande-mc-1535_163b7df03fbfa03ba35bc8828f9eb918.fit-760w.JPG"
-        return '<tr style="background:white"><td><img src="' + this.img + '" height="200px" width="280px"></td><td><h1>'+ this.artist +'</h1><p>Location:'+this.location+'</p><p>Price:'+this.price+'</p></td><td><button id='+this.id+' class="add-to-wl">Add to Wishlist</button></td></tr>'
+        return '<tr style="background:white"><td><img src="' + this.img + '" height="200px" width="280px"></td><td><h1>'+ this.artist +'</h1><p>Location:'+this.location+'</p><p>Price:'+this.price+'</p></td><td><input type="number" class="quantity" min="1" max="6" value="1"><button data-id='+this.id+' class="add-wl-btn">Add to Wishlist</button></td></tr>'
     }
 }
 

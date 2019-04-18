@@ -59,7 +59,7 @@ searchBtn.onclick = function() {
 }
 
 searchBox.addEventListener("input", function(e) {
-    const typing = e.target.value.toLowerCase()
+   const typing = e.target.value.toLowerCase()
     return filtering(typing)
     })
 
