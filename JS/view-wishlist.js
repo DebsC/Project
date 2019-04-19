@@ -1,10 +1,10 @@
 // Create a function that renders the individual wishlist item
-const renderWishlistItem = (concert) => {
-return `<tr style="background:white"><td><img src="${concert.img}" height="200px" width="280px"></td><td><h1>${concert.artist}</h1><p>Location:${concert.location}</p><p>Price:${concert.price}</p></td><td${concert.quantity}><button data-id="${concert.id}" class="remove-from-wl">Remove</button></td></tr>`
-   }
+// const renderWishlistItem = (concert) => {
+// return `<tr style="background:white"><td><img src="${concert.img}" height="200px" width="280px"></td><td><h1>${concert.artist}</h1><p>Location:${concert.location}</p><p>Price:${concert.price}</p></td><td${concert.quantity}><button data-id="${concert.id}" class="remove-from-wl">Remove</button></td></tr>`
+//   }
 
 
-// Create a function that generates the DOM structure
+/*// Create a function that generates the DOM structure
 const generateWishlistDOM = () => {
     const WISHlist = getWishlist()
      let htmlWL = ""
@@ -18,5 +18,4 @@ const generateWishlistDOM = () => {
      }
      document.getElementById("wishlist-content").innerHTML = htmlWL
  }
-
-
+*/

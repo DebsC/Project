@@ -95,8 +95,9 @@
 
   <input type="text" id="searchbox" placeholder="Search your favourite artist">
   <input type="button" id="searchbtn" value="Filter">
-  <button onclick="location.href = 'wishlist.html'">View Wishlist</button>
-  
+  <!--<button onclick="location.href = 'wishlist.html'">View Wishlist</button>-->
+  <input type="button" id="view-wishlist-btn" value="View wishlist">
+
   <div>
   <table>
     <tbody id="events">
@@ -106,11 +107,16 @@
 </div>
 
 <script src="JS/user.js"></script>
+<script src="JS/database.js"></script>
+<script src="JS/storedusers.js"></script>
 <script src="JS/concertsclass.js"></script>
 <script src="JS/concertsarray.js"></script>
-<script src="JS/wishlist.js"></script>
+<script src="JS/wishlistclass.js"></script>
+<script src="JS/accesswishlist.js"></script>
+<script src="JS/addtowishlist.js"></script>
+<!--
 <script src="JS/view-wishlist.js"></script>
-<script src="JS/index.js"></script>
+<script src="JS/index.js"></script>-->
 </body>
 
 

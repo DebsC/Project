@@ -1,20 +1,3 @@
-/* const findCurrentUser = (arrayOfUsers, number) => {
-    const myUser = arrayOfUsers.filter(function(StoredUser) {
-    const StoredUser.id == id
-})
-return myUser
-}
-
-for (var i = 0; i < storedUsers.length; i ++) {
-    if (storedUsers[i].id == currentUser.id) {
-        window.location.href= "wishlist.html";
-        alert("your personla wishlist");
-        return true;
-      } 
-  }
-*/
-
-
 const searchBtn = document.getElementById("searchbtn");
 const artistTag = document.getElementById("dropDown1");
 const genreTag = document.getElementById("dropDown2");
@@ -93,52 +76,5 @@ function renderHTML(list) {
     document.getElementById('events').innerHTML = html
 }
 
-// prints the concert/s that successfully match the user's search
+// prints the concerts that successfully match the user's search
 renderHTML(concerts)
-
-
-
-
-
-let wishlist = []
-
-const findConcertById = (arrayofconcerts, id) => {
-    const concert = arrayofconcerts.filter(function(concert) {
-    return concert.id == id
-})
-   return concert
-}
-
-
-
-const addToWishlist = (id, quant) => {
-    console.log(`${id} concert has been added to your wishlist`);
-    if (!findConcertById(wishlist, id)) {
-        wishlist.push({...findConcertById(concerts, id), quantity: quant})
-    } else {
-        findConcertById(wishlist, id).quantity += quant
-    }
-    saveWishlist()
-}
-
-const loadWishlist = function() {
-    if (localStorage.getItem("wishlist") === null) {
-        wishlist = []
-    } else {
-        wishlist = JSON.parse(localStorage.getItem("wishlist"))
-    }
-}
-
-// Create a function that saves your wishlist to localStorage
-const saveWishlist = () => {
-    localStorage.setItem("wishlist", JSON.stringify(wishlist))
-}
-
-// Create a function that returns the current shopping cart
-const getWishlist = () => {
-    return wishlist
-}
-
-
-// Make sure to load the wishlist array
-loadWishlist()
