@@ -12,7 +12,7 @@ class Concert{ // the class is like an object creation factory
     // adding a method to the constructor
     // this function (which could be called in any way) allows to show the "table" of concerts and we put the html commands on the js itself
     renderConcert() {
-        return `<tr style="background:white"><td><img src="${this.img}" height="200px" width="280px"></td><td><h1>${this.artist}</h1><p>Location:${this.location}</p><p>Price:${this.price}</p></td><td><input type="number" class="quantity" min="1" max="6" value="1"></td><td><button data-id="${this.id}" class="add-wl-btn">Add to Wishlist</button></td></tr>`
+        return `<tr style="background:white"><td><img src="${this.img}" height="200px" width="280px"></td><td><h1>${this.artist}</h1><p>Location:${this.location}</p><p>Price:${this.price}</p></td><td><input type="number" class="quantity" min="1" max="6" value="1"><button data-id="${this.id}" class="add-wl-btn">Add to Wishlist</button></td></tr>`
     }
 }
 

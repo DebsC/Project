@@ -1,6 +1,6 @@
 // Create a function that renders the individual wishlist item
 const renderWishlistItem = (concert) => {
-return `<tr style="background:white"><td><img src="${concert.img}" height="200px" width="280px"></td><td><h1>${concert.artist}</h1><p>Location:${concert.location}</p><p>Price:${concert.price}</p></td><td>${concert.quantity}</td><td><button data-id="${concert.id}" class="remove-from-wl">Remove</button></td></tr>`
+return `<tr style="background:white"><td><img src="${concert.img}" height="200px" width="280px"></td><td><h1>${concert.artist}</h1><p>Location:${concert.location}</p><p>Price:${concert.price}</p></td><td${concert.quantity}><button data-id="${concert.id}" class="remove-from-wl">Remove</button></td></tr>`
    }
 
 
