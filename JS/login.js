@@ -6,7 +6,7 @@ var SignInBtn = document.getElementById("signin")
 // this refers to the array of users
 console.log(storedUsers) */
 
-const emailsignUI = document.getElementById("emailsignin")
+var emailsignUI = document.getElementById("emailsignin")
 const passwordsignUI = document.getElementById("pswsignin")
 
 var trials = 3
@@ -23,7 +23,7 @@ if (emailSignin.length < 1 || passwordSignin.length < 1) {
 
 for (var i = 0; i < users.length; i ++) {
   if (emailSignin == users[i].email && passwordSignin == users[i].password) {
-      whatsTheCurrentUser()
+      loadTheCurrentUser()
       window.location.href= "events.html";
       alert("You successfully logged in.");
       return true;
@@ -59,6 +59,17 @@ function whatsTheCurrentUser() {
   }
 }
 
+var currentUser = emailSignUI.value
+localStorage.setItem("loggedUser", currentUser)
+
+function loadTheCurrentUser() {
+  loggedUser = localStorage.getItem("loggedUser")
+  if (loggedUser != null) {
+  // if we find a user in the local storage then we want that user to be logged current user
+  // we set the current user as the user stored in the local storage
+  currentUser = JSON.parse(loggedUser)
+  }
+}
 
 /* var currentUser = []
 localStorage.setItem("loggedUser", JSON.stringify(emailsignUI.value))
