@@ -30,6 +30,8 @@ for (i=0; i < wishlist.length; i++) {
     if (currentUser == wishlist[i].email) {
         // set the userswishist equal to the specific user's array of saved concert
         userswishlist = wishlist[i].savedConcertId
+    } else {
+        console.log("wishlist is empty")
     }
     console.log("your personal wishlist")
     renderWishlistHTML()
@@ -77,14 +79,14 @@ viewWishlistBtn.onclick = function() {
   return retrieveUserWishlistHTML()
 }
 
-function renderWishlistHTML(table) {
+function renderWishlistHTML(list) {
     var html = ""
-    for(let i = 0; i < table.length; i++) {
-        html += table[i].renderWishlist()
+    for(let i = 0; i < list.length; i++) {
+        html += list[i].renderWishlist()
     }
     var table = document.getElementById("table")
     var row = table.getElementById("wishlist-content")
     row.innerHTML = html
 }
 
-renderWishlistHTML()
+renderWishlistHTML(wishlist)
