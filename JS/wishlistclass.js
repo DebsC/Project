@@ -10,6 +10,7 @@ class Wishlist {
         return `<tr style="background:white"><td><img src="${this.img}" height="200px" width="280px"></td><td><h1>${this.artist}</h1><p>Location:${this.location}</p></td><button data-id="${this.savedConcertId}" class="remove-from-wl">Remove</button></td></tr>`
     }
 }
+
 /*
 // hard coded wishlists
 var wishlists = [new Wishlist("annamaria@gmail.com", ["bl123", "ag123"], ["./Images/billy-lockett.jpg", "./Images/Ariana_Grande.jpeg"], ["Billy Lockett", "Ariana Grande"], ["Copenhagen", "Paris"]),
@@ -94,3 +95,4 @@ function renderWishlistHTML(list) {
 renderWishlistHTML(userswishlist)
 
 */
+

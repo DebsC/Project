@@ -24,12 +24,12 @@ if (emailSignin.length < 1 || passwordSignin.length < 1) {
 for (var i = 0; i < users.length; i ++) {
   if (emailSignin == users[i].email && passwordSignin == users[i].password) {
       //saveTheCurrentUser()
-      window.location.href= "events.html";
       alert("You successfully logged in.");
-      var currentUser = emailsignUI.value
-      localStorage.setItem("loggedUser", JSON.stringify(currentUser)) 
 
-      return true;
+      localStorage.setItem("loggedInUser", emailsignUI.value) 
+      
+      window.location.href= "events.html";
+      return false
     } 
     
 }
