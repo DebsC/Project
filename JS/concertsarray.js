@@ -78,3 +78,9 @@ function renderHTML(list) {
 
 // prints the concerts that successfully match the user's search
 renderHTML(concerts)
+
+// this refers to the view wishlist button
+const viewWishlistBtn = document.getElementById("view-wishlist-btn")
+viewWishlistBtn.onclick = function() {
+  window.location.href = "wishlist.html"
+}

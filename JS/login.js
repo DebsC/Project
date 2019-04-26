@@ -23,9 +23,12 @@ if (emailSignin.length < 1 || passwordSignin.length < 1) {
 
 for (var i = 0; i < users.length; i ++) {
   if (emailSignin == users[i].email && passwordSignin == users[i].password) {
-      loadTheCurrentUser()
+      //saveTheCurrentUser()
       window.location.href= "events.html";
       alert("You successfully logged in.");
+      var currentUser = emailsignUI.value
+      localStorage.setItem("loggedUser", JSON.stringify(currentUser)) 
+
       return true;
     } 
     
@@ -49,38 +52,12 @@ if(trials == 0) {
 // push the current user from the local storage
 
 
-var currentUser = emailsignUI.value
-localStorage.setItem("loggedUser", JSON.stringify(currentUser)) 
-function whatsTheCurrentUser() {
-  if (localStorage.getItem("loggedUser") != null) {
+
+//function saveTheCurrentUser() {
+  //if (localStorage.getItem("loggedUser") != null) {
   // if we find a user in the local storage then we want that user to be logged current user
   // we set the current user as the user stored in the local storage
-  loggedUser = JSON.parse(localStorage.getItem("loggedUser"))
-  }
-}
+  //loggedUser = JSON.parse(localStorage.getItem("loggedUser"))
+ // localStorage.setItem("loggedUser", JSON.stringify(currentUser)) 
 
-var currentUser = emailSignUI.value
-localStorage.setItem("loggedUser", currentUser)
-
-function loadTheCurrentUser() {
-  loggedUser = localStorage.getItem("loggedUser")
-  if (loggedUser != null) {
-  // if we find a user in the local storage then we want that user to be logged current user
-  // we set the current user as the user stored in the local storage
-  currentUser = JSON.parse(loggedUser)
-  }
-}
-
-/* var currentUser = []
-localStorage.setItem("loggedUser", JSON.stringify(emailsignUI.value))
-
-function whatsTheCurrentUser() {
-  loggedUser = JSON.parse(localStorage.getItem("loggedUser"))
-
-  if (localStorage.getItem("loggedUser", emailsignUI.value) != null) {
-  // if we find a user in the local storage then we want that user to be logged current user
-  // we set the current user as the user stored in the local storage
-  //currentUser = localStorage.getItem("loggedUser")
-  currentUser.push(loggedUser)
-  }
-} */
+ // }

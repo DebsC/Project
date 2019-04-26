@@ -10,7 +10,7 @@ class Wishlist {
         return `<tr style="background:white"><td><img src="${this.img}" height="200px" width="280px"></td><td><h1>${this.artist}</h1><p>Location:${this.location}</p></td><button data-id="${this.savedConcertId}" class="remove-from-wl">Remove</button></td></tr>`
     }
 }
-/*
+
 // hard coded wishlists
 var wishlists = [new Wishlist("annamaria@gmail.com", ["bl123", "ag123"], ["./Images/billy-lockett.jpg", "./Images/Ariana_Grande.jpeg"], ["Billy Lockett", "Ariana Grande"], ["Copenhagen", "Paris"]),
                 new Wishlist("deboraceccato@gmail.com", ["kk123", "nj123", "ag123"], ["./Images/kasabian.jpg", "./Images/norah-jones.jpg", "./Images/Ariana_Grande.jpeg"], ["Kasabian", "Norah Jones", "Ariana Grande"], ["Manchester", "Zurich", "Paris"]),
@@ -79,7 +79,7 @@ const viewWishlistBtn = document.getElementById("view-wishlist-btn")
 viewWishlistBtn.onclick = function() {
   window.location.href = "wishlist.html"
   return retrieveUserWishlistHTML()
-} 
+} */
 
 function renderWishlistHTML(list) {
     var html = ""
@@ -92,5 +92,3 @@ function renderWishlistHTML(list) {
 }
 
 renderWishlistHTML(userswishlist)
-
-*/

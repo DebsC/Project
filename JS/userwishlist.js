@@ -1,24 +1,22 @@
-class Wishlist {
-    constructor(email, savedConcertId, img, artist, location) {
-        this.email = email;
-        this.savedConcertId = savedConcertId;
-        this.img = img;
-        this.artist = artist;
-        this.location = location;
-    }
-    renderWishlist() {
-        return `<tr style="background:white"><td><img src="${this.img}" height="200px" width="280px"></td><td><h1>${this.artist}</h1><p>Location:${this.location}</p></td><button data-id="${this.savedConcertId}" class="remove-from-wl">Remove</button></td></tr>`
-    }
-}
-/*
 // hard coded wishlists
-var wishlists = [new Wishlist("annamaria@gmail.com", ["bl123", "ag123"], ["./Images/billy-lockett.jpg", "./Images/Ariana_Grande.jpeg"], ["Billy Lockett", "Ariana Grande"], ["Copenhagen", "Paris"]),
-                new Wishlist("deboraceccato@gmail.com", ["kk123", "nj123", "ag123"], ["./Images/kasabian.jpg", "./Images/norah-jones.jpg", "./Images/Ariana_Grande.jpeg"], ["Kasabian", "Norah Jones", "Ariana Grande"], ["Manchester", "Zurich", "Paris"]),
-                new Wishlist("janskaaden@gmail.com", ["ar123"], ["./Images/asap-rocky.jpg"], ["A$AP Rocky"], ["Stockholm"])]
+var wishlists = [new Wishlist("annamaria@gmail.com", "bl123", "./Images/billy-lockett.jpg", "Billy Lockett", "Copenhagen"),
+                new Wishlist("deboraceccato@gmail.com", "kk123", "./Images/kasabian.jpg", "Kasabian", "Manchester"),
+                new Wishlist("janskaaden@gmail.com", "as123", "./Images/asap-rocky.jpg", "A$AP Rocky", "Stockholm"),
+                new Wishlist("annamaria@gmail.com", "ar123", "./Images/Ariana_Grande.jpeg", "Ariana Grande", "Paris"),
+                new Wishlist("deboraceccato@gmail.com", "nj123", "./Images/norah-jones.jpg", "Norah Jones", "Zurich"),
+                new Wishlist("deboraceccato@gmail.com", "ag123", "./Images/Ariana_Grande.jpeg", "Ariana Grande", "Paris")
+            ]
 
-var userswishlist = ""
+//var userswishlist = ""
 
-localStorage.setItem("usersWishlists", JSON.stringify(wishlists));
+// for(...userswishlist.le
+// return tr td userwishlist i td tr
+
+if (localStorage.getItem("usersWishlists") == null) {
+    localStorage.setItem("usersWishlists", JSON.stringify(wishlists))
+} else {
+    wishlists = JSON.parse(localStorage.getItem("usersWishlists"))
+}
 
 var currentUser = JSON.parse(localStorage.getItem("loggedUser"))
 
@@ -26,19 +24,23 @@ console.log(currentUser)
 
 function retrieveUserWishlist() {
 // now we get the wishlist from the local storage
-var wishlist = JSON.parse(localStorage.getItem("usersWishlists"))
+//var wishlist = JSON.parse(localStorage.getItem("usersWishlists"))
 // loop through the wishlist array for a match between the current user email and the email saved on the wishlist array
-for (let i=0; i < wishlist.length; i++) {
-    if (currentUser == wishlist[i].email) {
+for (let i=0; i < wishlists.length; i++) {
+    if (currentUser == wishlists[i].email) {
         // set the userswishist equal to the specific user's array of saved concert
-        userswishlist = wishlist[i].savedConcertId
+        //userswishlist = wishlist[i].savedConcertId
+        //renderWishlistHTML(wishlists[i])
+        console.log(wishlists[i])
     } else {
         console.log("wishlist is empty")
     }
-    console.log("your personal wishlist")
-    renderWishlistHTML()
+    //console.log("your personal wishlist")
+    //renderWishlistHTML()
     }
 }
+
+retrieveUserWishlist()
 
 /* const findCurrentUser = (arrayOfUsers, number) => {
     const myUser = arrayOfUsers.filter(function(StoredUser) {
@@ -80,17 +82,15 @@ viewWishlistBtn.onclick = function() {
   window.location.href = "wishlist.html"
   return retrieveUserWishlistHTML()
 } 
+var table = document.getElementById("table")
+var tableBody = table.getElementById("wishlist-content")
 
 function renderWishlistHTML(list) {
     var html = ""
     for(let i = 0; i < list.length; i++) {
         html += list[i].renderWishlist()
     }
-    var table = document.getElementById("table")
-    var row = table.getElementById("wishlist-content")
-    row.innerHTML = html
+    tableBody.innerHTML = html
 }
 
-renderWishlistHTML(userswishlist)
-
-*/
+//renderWishlistHTML(userswishlist)*/
