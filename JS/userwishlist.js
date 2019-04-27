@@ -1,12 +1,3 @@
-// hard coded wishlists
-// var wishlists = [new Wishlist("annamaria@gmail.com", "bl123", "./Images/billy-lockett.jpg", "Billy Lockett", "Copenhagen"),
-//                 new Wishlist("deboraceccato@gmail.com", "kk123", "./Images/kasabian.jpg", "Kasabian", "Manchester"),
-//                 new Wishlist("janskaaden@gmail.com", "as123", "./Images/asap-rocky.jpg", "A$AP Rocky", "Stockholm"),
-//                 new Wishlist("annamaria@gmail.com", "ar123", "./Images/Ariana_Grande.jpeg", "Ariana Grande", "Paris"),
-//                 new Wishlist("deboraceccato@gmail.com", "nj123", "./Images/norah-jones.jpg", "Norah Jones", "Zurich"),
-//                 new Wishlist("deboraceccato@gmail.com", "ag123", "./Images/Ariana_Grande.jpeg", "Ariana Grande", "Paris")
-//             ]
-
 // retrieve the wishlist from the local storage
 // if there is nothing in the wishlist, then we set the wishlist as empty array
 // instead if there are objects within the array, we want to get the concerts saved in the wishlist on local storage
@@ -27,11 +18,13 @@ if (localStorage.getItem("loggedInUser") === null) {
     currentUser = localStorage.getItem("loggedInUser")
 }
 
+
+
 // rendering function to actually see the wishlist in the html page
 // this is the function containing the html code for the table
 // wish is a parameter
 function renderWish(wish) {
-    return `<tr style="background:white"><td><img src="${wish.img}" height="200px" width="280px"></td><td><h1>${wish.artist}</h1><p>Location:${wish.location}</p></td><button data-id="${wish.savedConcertId}" class="remove-from-wl">Remove</button></td></tr>`
+    return `<tr style="background:white"><td><img src="${wish.img}" height="200px" width="280px"></td><td><h1>${wish.artist}</h1><p>Location:${wish.location}</p></td><button data-id="${wish.id}" class="remove-from-wl">Remove</button></td></tr>`
 }
 
 // create a rendering funciton

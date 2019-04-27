@@ -33,8 +33,7 @@ for (let i = 0; i < addConcertButtons.length; i++) {
         // create an object id that identifies when the specific button being clicked (that's why we use target.dataset.id)
         let id = e.target.dataset.id
         // create a quantity object that will be later used to identify the button being clicked - previous element sibling - the following element is the add to wishlist button
-        let quantity = Number(addConcertButtons[i].previousElementSibling.value) 
-        // add number in the front because we want to concert the integer into a number and not keep it as a string
+        let quantity = Number(addConcertButtons[i].previousElementSibling.value) // add number in the front because we want to concert the integer into a number and not keep it
 
         console.log("clicked")
         console.log(wishlist)
