@@ -2,9 +2,13 @@
 
 var SignInBtn = document.getElementById("signin")
 
-/*var storedUsers = JSON.parse(localStorage.getItem("users")) // we use parse method in order to convert the strings (users registration information) into objects
+var storedUsers = JSON.parse(localStorage.getItem("users")) // we use parse method in order to convert the strings (users registration information) into objects
 // this refers to the array of users
-console.log(storedUsers) */
+
+//Check if it's empty, you will want to overwrite the users
+if( storedUsers!= null ) {
+  users = storedUsers
+}
 
 var emailsignUI = document.getElementById("emailsignin")
 const passwordsignUI = document.getElementById("pswsignin")
@@ -22,6 +26,7 @@ if (emailSignin.length < 1 || passwordSignin.length < 1) {
 }
 
 for (var i = 0; i < users.length; i ++) {
+  JSON.parse(localStorage.getItem("users"))
   if (emailSignin == users[i].email && passwordSignin == users[i].password) {
       //saveTheCurrentUser()
       alert("You successfully logged in.");
