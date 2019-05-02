@@ -36,7 +36,6 @@ const filterEvents = function(arrayOfConcerts, filter) {
  function filtering() {
     // Read out the search criteria & update our filters object
     // the function recognised which option has been selected by the user for each filter
-    
     // access the filter properties (artist, genre and location) and put them equal to the value in the tag
     filters.artist = artistTag.value
     filters.genre = genreTag.value
@@ -50,6 +49,7 @@ const filterEvents = function(arrayOfConcerts, filter) {
 
     // we call the renderHTML() to create the HTML code for every concert
     // in the array
+    // here it shows only the concerts that match the filteirng criteria
     renderHTML(filteredConcerts)
 }
 
@@ -64,12 +64,14 @@ searchBox.addEventListener("input", function(e) {
     })
 
     // the parameter could be called anytype - but needs to be specified
+    // construct the general function and assign it a parameter -  we decide to call it "list"
 function renderHTML(list) {
     var html = ""
 // we introduce the var html='' empty to make sure that the function erases the whole list of concerts available everytime the user launches a search
-// and shows only the concerts that successfully matches the search criteria
+// and shows only the concerts that successfully matches the search criteria (renderHTML filtered concerts)
     for(let i = 0; i < list.length; i++) {
         html += list[i].renderConcert()
+        // we call the class method for the specific concert being selected/choosen
     }
     // this allows to show the specific concert
     // "events" refers to the id in the table in html
@@ -77,6 +79,8 @@ function renderHTML(list) {
 }
 
 // prints the concerts that successfully match the user's search
+// pass the parameter concert
+// here it shows all the concerts available for selection on the website
 renderHTML(concerts)
 
 // this refers to the view wishlist button

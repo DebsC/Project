@@ -81,6 +81,6 @@ for (let i = 0; i < addConcertButtons.length; i++) {
     })
 }
 
-// Flaw = now all concerts from all the users are being added to the same big wishlist and the every time a different user is logged in, 
+// Flaw = now all concerts from all the users are being added to the same big wishlist and the every time a different user is logged in,
 // the program loops through all of the saved concerts and checks which ones match the currently logged user
 

@@ -24,7 +24,7 @@ if (localStorage.getItem("loggedInUser") === null) {
 // this is the function containing the html code for the table
 // wish is a parameter
 function renderWish(wish) {
-    return `<tr style="background:white"><td><img src="${wish.img}" height="200px" width="280px"></td><td><h1>${wish.artist}</h1><p>Location:${wish.location}</p></td><button data-id="${wish.id}" class="remove-from-wl">Remove</button></td></tr>`
+    return `<tr style="background:white"><td><img src="${wish.img}" height="200px" width="280px"></td><td><h1>${wish.artist}</h1><p>Location:${wish.location}</p></td><td><button data-id="${wish.id}" class="remove-from-wl">Remove</button></td></tr>`
 }
 
 // create a rendering funciton
