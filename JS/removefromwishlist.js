@@ -1,7 +1,5 @@
-const removeFromWishlistButton = document.getElementsByClassName("remove-from-wl")
+// const removeFromWishlistButton = document.getElementsByClassName("remove-from-wl")
 let listWish;
-
-console.log(removeFromWishlistButton)
 
 if (localStorage.getItem("loggedInUser") === null) {
     window.location.assign("login.html")
@@ -21,18 +19,15 @@ if (localStorage.getItem("wishlist") == null) {
     
 }
 
-for (var i=0; i < removeFromWishlistButton.length; i++) {
-        removeFromWishlistButton[i].addEventListener("click", function(e) {
-        let IdButtonClicked = e.target.dataset.id
-        console.log("remove item")
-        
-        for (let i = 0; i < wishlist.length; i++) {
-            if (wishlist[i].id === IdButtonClicked) {
-            wishlist.splice(i, 1)
-            localStorage.setItem("wishlist", JSON.stringify(wishlist))
-            e.target.disabled = true
-        }
-        }
-    })
-    // location.reload(false)
+
+function removeItem(event) {
+    let IdButtonClicked = event.target.dataset.id
+    for (let i = 0; i < wishlist.length; i++) {
+        if (wishlist[i].id === IdButtonClicked) {
+        wishlist.splice(i, 1)
+        localStorage.setItem("wishlist", JSON.stringify(wishlist))
+        renderWishlistHTML()
+        //e.target.disabled = true
+    }
+    }
 }

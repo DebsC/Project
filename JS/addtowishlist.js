@@ -65,7 +65,6 @@ for (let i = 0; i < addConcertButtons.length; i++) {
                 index = i // refers alwasy to some i - index
             }
         }
-        
         // here, if the concert already exists, then for that targeted concert, we have to increment the quantity by the number of tickets being added
         if(exists){
             // we use the quantity property that was defined in the listItem - in the copy of the concerts we created before
@@ -77,6 +76,13 @@ for (let i = 0; i < addConcertButtons.length; i++) {
             // we add the item to the wishlist
             wishlist.push(listItem)
         }
+
+        /*
+        if (wishlist[i].id === id && wishlist[i].owner === currentUser) {
+            
+        }
+        */
+
         // we save the concert to the local storage
         localStorage.setItem('wishlist', JSON.stringify(wishlist))
     })
