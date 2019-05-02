@@ -63,6 +63,7 @@ var regPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,}
        
         else {
             alert("You have entered an invalid email address, please enter a valid email.")
+            return false
         }
    
         // check if the password entered by the user follows all of the preset criteria
@@ -81,7 +82,7 @@ var regPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,}
         alert("The password must be at least 8 characters long and it must contain at least one uppercase, one lowercase, one number and one special characters among the following: @, #, *, ...")
         return false
     }
-}
+
 
 console.log(users)
 
@@ -94,4 +95,3 @@ if (!registeredUserEmail) {
     console.log("email not registered yet");
 } else {
     console.log("email already registered")
-}
