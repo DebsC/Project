@@ -1,5 +1,6 @@
-const logOut = document.getElementById("lo")
+const logOut = document.getElementById("lg")
 
-logOut.onclick = function {
-    // clear 
+logOut.onclick = function () {
+    localStorage.removeItem("loggedInUser")
+    window.location = "login.html"
 }
