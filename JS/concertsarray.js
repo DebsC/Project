@@ -58,6 +58,8 @@ searchBtn.onclick = function() {
     return filtering()
 }
 
+
+
 searchBox.addEventListener("input", function(e) {
    const typing = e.target.value.toLowerCase()
     return filtering(typing)
@@ -87,4 +89,8 @@ renderHTML(concerts)
 const viewWishlistBtn = document.getElementById("view-wishlist-btn")
 viewWishlistBtn.onclick = function() {
   window.location.href = "wishlist.html"
+}
+
+if (filtering) {
+    addConcertsToWishlist()
 }

@@ -27,6 +27,7 @@ const addConcertButtons = document.getElementsByClassName('add-wl-btn')
 console.log(addConcertButtons);
 
 // create a loop to go throuhg the list of buttons displayed on the html page
+function addConcertsToWishlist() {
 for (let i = 0; i < addConcertButtons.length; i++) {
     //add an event listener that triggers when the user clicks on the button
     addConcertButtons[i].addEventListener("click", (e) => {
@@ -45,7 +46,7 @@ for (let i = 0; i < addConcertButtons.length; i++) {
                 listItem = {...concerts[i], quantity: 0, owner: currentUser} // ... are called the REST parameter. It create a "copy" of the object with the identical properties
                 // we add two properties to the copy of the concert by index: quantity and the owner 
                 //(here we set the owner to coincide witht the currentUser - that's why at the top of the page we get the loggedInUser from local storage)
-                //e.target.disabled = true
+                e.target.disabled = true
             }
         }
 
@@ -80,6 +81,9 @@ for (let i = 0; i < addConcertButtons.length; i++) {
         localStorage.setItem('wishlist', JSON.stringify(wishlist))
     })
 }
+}
+
+addConcertsToWishlist()
 
 // Flaw = now all concerts from all the users are being added to the same big wishlist and the every time a different user is logged in,
 // the program loops through all of the saved concerts and checks which ones match the currently logged user

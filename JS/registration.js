@@ -67,10 +67,10 @@ var regPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,}
    
         // check if the password entered by the user follows all of the preset criteria
     if (regPassword.test(password)) {
-        
         // if the passowrd satisfies all criteria, then the user is saved to the users array on the local machine
         users.push(new User(firstName, lastName, email, password))
-        localStorage.setItem("users", JSON.stringify(users)); // string because the local storage can only store strings values
+        localStorage.setItem("users", JSON.stringify(users));
+        console.log(users) // string because the local storage can only store strings values
         //console.log("The user has selected a strong password.")
         alert("You are successfully registered to our website, you can now sign in =)") 
         window.location.href = "login.html" // the user gets redirected to the signin page - we cannot use window.location.assign('') because our new page is not an url, but just an html document
@@ -84,6 +84,7 @@ var regPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,}
 }
 
 console.log(users)
+
 
 let registeredUserEmail = users.find(function(user) {
     return user.email == newUseremail;

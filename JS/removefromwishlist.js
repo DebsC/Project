@@ -30,7 +30,8 @@ for (var i=0; i < removeFromWishlistButton.length; i++) {
             if (wishlist[i].id === IdButtonClicked) {
             wishlist.splice(i, 1)
             localStorage.setItem("wishlist", JSON.stringify(wishlist))
-            }
+            e.target.disabled = true
+        }
         }
     })
     // location.reload(false)

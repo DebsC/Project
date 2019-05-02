@@ -2,9 +2,18 @@
 
 var SignInBtn = document.getElementById("signin")
 
-/*var storedUsers = JSON.parse(localStorage.getItem("users")) // we use parse method in order to convert the strings (users registration information) into objects
+// override the variable
+var storedUsers = JSON.parse(localStorage.getItem("users")) // we use parse method in order to convert the strings (users registration information) into objects
 // this refers to the array of users
-console.log(storedUsers) */
+console.log(storedUsers)
+
+// if there is nothing saved in the local storage then we set the users array to the stored users one
+if (storedUsers != null) {
+  users = storedUsers
+}
+
+JSON.parse(localStorage.getItem("users"))
+console.log(users)
 
 var emailsignUI = document.getElementById("emailsignin")
 const passwordsignUI = document.getElementById("pswsignin")
@@ -23,11 +32,8 @@ if (emailSignin.length < 1 || passwordSignin.length < 1) {
 
 for (var i = 0; i < users.length; i ++) {
   if (emailSignin == users[i].email && passwordSignin == users[i].password) {
-      //saveTheCurrentUser()
       alert("You successfully logged in.");
-
       localStorage.setItem("loggedInUser", emailsignUI.value) 
-      
       window.location.href= "events.html";
       return false
     } 
