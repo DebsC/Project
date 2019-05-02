@@ -60,7 +60,7 @@ for (let i = 0; i < addConcertButtons.length; i++) {
         // we set an index object equal to the index of the wishlist
         for (let i = 0; i < wishlist.length; i++) {
             // if the wishlist id of the concert present in the wishlist matches the id of the add button being clicked
-            if (wishlist[i].id === id) {
+            if (wishlist[i].id === id && wishlist[i].owner === currentUser) {
                 exists = true // the concert is present
                 index = i // refers alwasy to some i - index
             }
@@ -76,12 +76,6 @@ for (let i = 0; i < addConcertButtons.length; i++) {
             // we add the item to the wishlist
             wishlist.push(listItem)
         }
-
-        /*
-        if (wishlist[i].id === id && wishlist[i].owner === currentUser) {
-            
-        }
-        */
 
         // we save the concert to the local storage
         localStorage.setItem('wishlist', JSON.stringify(wishlist))
