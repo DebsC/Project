@@ -56,15 +56,15 @@ function filtering() {
 
 searchBtn.onclick = function () {
     filtering()
-    return addConcertsToWishlist()
+    return addConcertsToWishlist() // allow to add the filtered concert to the wishlist
 }
 
 
 
 searchBox.addEventListener("input", function (e) {
     const typing = e.target.value.toLowerCase()
-    filtering(typing)
-    return addConcertsToWishlist()
+    filtering(typing) // pass a specific filter
+    return addConcertsToWishlist() // this allow us to add the filtered concert to the wishlist
 })
 
 // the parameter could be called anytype - but needs to be specified

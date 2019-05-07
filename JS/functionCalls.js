@@ -1,3 +1,7 @@
+// retrieve the wishlist from the local storage
+// if there is nothing in the wishlist, then we set the wishlist as empty array
+// instead if there are objects within the array, we want to get the concerts saved in the wishlist on local storage
+
 function retrieveUser() {
     if (localStorage.getItem("loggedInUser") === null) {
         window.location.assign("login.html")
@@ -14,7 +18,6 @@ function retrieveWishlist() {
     // otherwise we set the wishlist to the wishlist retrieved from the local storage - first we need to de string the info saved to the local storage
     if (localStorage.getItem("wishlist") == null) {
         wishlist = []
-        //localStorage.setItem("wishlist", JSON.stringify(wishlists))
     } else {
         wishlist = JSON.parse(localStorage.getItem("wishlist"))
     }

@@ -1,25 +1,5 @@
-// retrieve the wishlist from the local storage
-// if there is nothing in the wishlist, then we set the wishlist as empty array
-// instead if there are objects within the array, we want to get the concerts saved in the wishlist on local storage
-
 retrieveWishlist()
 retrieveUser()
-// if (localStorage.getItem("wishlist") == null) {
-//     console.log("no concert in wishlist")
-//     wishlist = []
-//     //localStorage.setItem("wishlist", JSON.stringify(wishlists))
-// } else {
-//     wishlist = JSON.parse(localStorage.getItem("wishlist"))
-//     console.log(wishlist)
-// }
-
-// // retrieving current user that is logged in -- if it's not logged in then the user is redirected to the login page
-
-// if (localStorage.getItem("loggedInUser") === null) {
-//     window.location.assign("login.html")
-// } else {
-//     currentUser = localStorage.getItem("loggedInUser")
-// }
 
 
 // rendering function to actually see the wishlist in the html page
@@ -65,3 +45,9 @@ function renderWishlistHTML() {
 
 // we need to call the function
 renderWishlistHTML()
+
+// this refers to the go back to concert list button
+const goBackButton = document.getElementById("back-btn")
+goBackButton.onclick = function () {
+    window.location.href = "events.html"
+}
