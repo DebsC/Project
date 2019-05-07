@@ -1,4 +1,4 @@
-class Concert{ // the class is like an object creation factory
+class Concert { // the class is like an object creation factory
     constructor(artist, genre, location, dateConcert, price, img, id) { // keys of a class
         this.artist = artist;
         this.genre = genre;
@@ -19,12 +19,12 @@ class Concert{ // the class is like an object creation factory
 
 // add the url source for the image for each concert event so that each one show a different picture
 var concerts = [new Concert("Ariana Grande", "Pop", "Paris", new Date(2019, 5, 12), "50", "./Images/Ariana_Grande.jpeg", "ag123"),
-                new Concert("A$AP Rocky", "Hip-Hop / Rap", "Stockholm", new Date(2019, 8, 17), "48", "./Images/asap-rocky.jpg", "ar123"),
-                new Concert("Billy Lockett", "Pop", "Copenhagen", new Date(2019, 2, 31),"32", "./Images/billy-lockett.jpg", "bl123"),
-                new Concert("Blossoms", "Alternative", "Reading", new Date(2019, 10, 25), "52", "./Images/blossoms.jpeg", "bb123"),
-                new Concert("Calcutta", "Alternative", "Milan", new Date(2019, 7, 3), "18", "./Images/calcutta.jpeg", "cc123"),
-                new Concert("Dua Lipa", "Pop", "Berlin", new Date(2019, 6, 22), "47", "./Images/dua-lipa.jpg", "dl123"),
-                new Concert("Kasabian", "Rock", "Manchester", new Date(2019, 11, 2), "27", "./Images/kasabian.jpg", "kk123"),
-                new Concert("Alvaro Soler", "Latin", "Madrid", new Date(2019, 9, 14), "33", "./Images/alvaro-soler.jpeg", "as123"),
-                new Concert("Dolly Parton", "Country", "Los Angeles", new Date(2019, 4, 11), "29", "./Images/dolly-parton.jpeg", "dp123"),
-                new Concert("Norah Jones", "Jazz", "Zurich", new Date(2019, 2, 11), "13", "./Images/norah-jones.jpg", "nj123")]
+new Concert("A$AP Rocky", "Hip-Hop / Rap", "Stockholm", new Date(2019, 8, 17), "48", "./Images/asap-rocky.jpg", "ar123"),
+new Concert("Billy Lockett", "Pop", "Copenhagen", new Date(2019, 2, 31), "32", "./Images/billy-lockett.jpg", "bl123"),
+new Concert("Blossoms", "Alternative", "Reading", new Date(2019, 10, 25), "52", "./Images/blossoms.jpeg", "bb123"),
+new Concert("Calcutta", "Alternative", "Milan", new Date(2019, 7, 3), "18", "./Images/calcutta.jpeg", "cc123"),
+new Concert("Dua Lipa", "Pop", "Berlin", new Date(2019, 6, 22), "47", "./Images/dua-lipa.jpg", "dl123"),
+new Concert("Kasabian", "Rock", "Manchester", new Date(2019, 11, 2), "27", "./Images/kasabian.jpg", "kk123"),
+new Concert("Alvaro Soler", "Latin", "Madrid", new Date(2019, 9, 14), "33", "./Images/alvaro-soler.jpeg", "as123"),
+new Concert("Dolly Parton", "Country", "Los Angeles", new Date(2019, 4, 11), "29", "./Images/dolly-parton.jpeg", "dp123"),
+new Concert("Norah Jones", "Jazz", "Zurich", new Date(2019, 2, 11), "13", "./Images/norah-jones.jpg", "nj123")]
