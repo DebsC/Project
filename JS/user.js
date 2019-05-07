@@ -1,5 +1,3 @@
-console.log("user.js loaded")
-
 class User {
     constructor(firstName, lastName, email, password) {
         this.firstName = firstName;
