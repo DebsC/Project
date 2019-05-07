@@ -30,59 +30,59 @@ console.log(addConcertButtons);
 
 // create a loop to go throuhg the list of buttons displayed on the html page
 function addConcertsToWishlist() {
-    for (let i = 0; i < addConcertButtons.length; i++) {
-        //add an event listener that triggers when the user clicks on the button
-        addConcertButtons[i].addEventListener("click", (e) => {
-            // create an object id that identifies when the specific button being clicked (that's why we use target.dataset.id)
-            let id = e.target.dataset.id
-            // create a quantity object that will be later used to identify the button being clicked - previous element sibling - the following element is the add to wishlist button
-            let quantity = Number(addConcertButtons[i].previousElementSibling.value) // add number in the front because we want to concert the integer into a number and not keep it
+for (let i = 0; i < addConcertButtons.length; i++) {
+    //add an event listener that triggers when the user clicks on the button
+    addConcertButtons[i].addEventListener("click", (e) => {
+        // create an object id that identifies when the specific button being clicked (that's why we use target.dataset.id)
+        let id = e.target.dataset.id
+        // create a quantity object that will be later used to identify the button being clicked - previous element sibling - the following element is the add to wishlist button
+        let quantity = Number(addConcertButtons[i].previousElementSibling.value) // add number in the front because we want to concert the integer into a number and not keep it
 
-            console.log("clicked")
-            console.log(wishlist)
-            // create a loop through the list of concerts
-            for (let i = 0; i < concerts.length; i++) {
-                // if statement -> if the specific concert's id exactly matches the id of the button being clicked by the user
-                if (concerts[i].id === id) {
+        console.log("clicked")
+        console.log(wishlist)
+        // create a loop through the list of concerts
+        for (let i = 0; i < concerts.length; i++) {
+            // if statement -> if the specific concert's id exactly matches the id of the button being clicked by the user
+            if(concerts[i].id === id) {
 
-                    listItem = { ...concerts[i], quantity: 0, owner: currentUser } // ... are called the REST parameter. It create a "copy" of the object with the identical properties
-                    // we add two properties to the copy of the concert by index: quantity and the owner 
-                    //(here we set the owner to coincide witht the currentUser - that's why at the top of the page we get the loggedInUser from local storage)
-                    e.target.disabled = true
-                }
+                listItem = {...concerts[i], quantity: 0, owner: currentUser} // ... are called the REST parameter. It create a "copy" of the object with the identical properties
+                // we add two properties to the copy of the concert by index: quantity and the owner 
+                //(here we set the owner to coincide witht the currentUser - that's why at the top of the page we get the loggedInUser from local storage)
+                e.target.disabled = true
             }
+        }
 
-            // check if the concert the user is trying to add to the wishlist is already present in the wishlist, we say that it's not so we set exists = false
-            let exists = false;
-            let index; // we don't assign it a value
+// check if the concert the user is trying to add to the wishlist is already present in the wishlist, we say that it's not so we set exists = false
+        let exists = false;
+        let index; // we don't assign it a value
 
-            // we create a for loop that checks through the wishlist if the the concert is already present or not
-            // under the condition that the wishlist id is equal to the id of the add button being clicked, 
-            // then we say that the concert exists, in the sense that is present within the wishlist
-            // we set an index object equal to the index of the wishlist
-            for (let i = 0; i < wishlist.length; i++) {
-                // if the wishlist id of the concert present in the wishlist matches the id of the add button being clicked
-                if (wishlist[i].id === id && wishlist[i].owner === currentUser) {
-                    exists = true // the concert is present
-                    index = i // refers alwasy to some i - index
-                }
+        // we create a for loop that checks through the wishlist if the the concert is already present or not
+        // under the condition that the wishlist id is equal to the id of the add button being clicked, 
+        // then we say that the concert exists, in the sense that is present within the wishlist
+        // we set an index object equal to the index of the wishlist
+        for (let i = 0; i < wishlist.length; i++) {
+            // if the wishlist id of the concert present in the wishlist matches the id of the add button being clicked
+            if (wishlist[i].id === id && wishlist[i].owner === currentUser) {
+                exists = true // the concert is present
+                index = i // refers alwasy to some i - index
             }
-            // here, if the concert already exists, then for that targeted concert, we have to increment the quantity by the number of tickets being added
-            if (exists) {
-                // we use the quantity property that was defined in the listItem - in the copy of the concerts we created before
-                // wishlist[index] refers to the array of concerts present in the wishlist itself, so we can no longer use i as index, but our newly defined index 
-                wishlist[index].quantity += quantity
-            } else {
-                // or if if was not present in the wishlist
-                listItem.quantity = quantity
-                // we add the item to the wishlist
-                wishlist.push(listItem)
-            }
+        }
+        // here, if the concert already exists, then for that targeted concert, we have to increment the quantity by the number of tickets being added
+        if(exists){
+            // we use the quantity property that was defined in the listItem - in the copy of the concerts we created before
+            // wishlist[index] refers to the array of concerts present in the wishlist itself, so we can no longer use i as index, but our newly defined index 
+            wishlist[index].quantity += quantity
+        } else {
+            // or if if was not present in the wishlist
+            listItem.quantity = quantity 
+            // we add the item to the wishlist
+            wishlist.push(listItem)
+        }
 
-            // we save the concert to the local storage
-            localStorage.setItem('wishlist', JSON.stringify(wishlist))
-        })
-    }
+        // we save the concert to the local storage
+        localStorage.setItem('wishlist', JSON.stringify(wishlist))
+    })
+}
 }
 
 addConcertsToWishlist()
