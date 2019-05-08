@@ -60,8 +60,8 @@ searchBtn.onclick = function () {
 }
 
 
-searchBox.addEventListener("input", function (e) {
-    const typing = e.target.value.toLowerCase()
+searchBox.addEventListener("input", function (event) {
+    const typing = event.target.value.toLowerCase()
     filtering(typing) // pass a specific filter
     return addConcertsToWishlist() // this allow us to add the filtered concert to the wishlist
 })
