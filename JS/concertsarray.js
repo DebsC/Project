@@ -60,7 +60,6 @@ searchBtn.onclick = function () {
 }
 
 
-
 searchBox.addEventListener("input", function (e) {
     const typing = e.target.value.toLowerCase()
     filtering(typing) // pass a specific filter
