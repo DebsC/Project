@@ -1,4 +1,4 @@
-let listWish;
+// let listWish;
 
 retrieveUser()
 retrieveWishlist()

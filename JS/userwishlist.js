@@ -16,7 +16,7 @@ function renderWish(wish) {
     return `<tr style="background:white"><td><img src="${wish.img}" height="200px" width="280px"></td><td><h1>${wish.artist}</h1><p>Location:${wish.location}</p><p>Quantity:${wish.quantity}</p></td><td><button data-id="${wish.id}" class="remove-from-wl">Remove</button></td></tr>`
 }
 
-// create a rendering funciton
+// create a rendering function
 
 /**
  * @description Renders the HTML structure for our wishlist
@@ -34,7 +34,7 @@ function renderWishlistHTML() {
             // add the concert one at a time - we pass the argument wishlist[i]
         }
     }
-    // access to the table id
+    // access to the table id - if this code snippet is not included within the rendering function then js will create a copy of the wishlist and we won't be able to trigger the remove button and make a specific concert dissappear immediatly
     document.getElementById("content").innerHTML = html
 
     const removeFromWishlistButton = document.getElementsByClassName("remove-from-wl")

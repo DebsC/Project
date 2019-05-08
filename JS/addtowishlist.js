@@ -14,9 +14,9 @@ console.log(addConcertButtons);
 function addConcertsToWishlist() {
     for (let i = 0; i < addConcertButtons.length; i++) {
         //add an event listener that triggers when the user clicks on the button
-        addConcertButtons[i].addEventListener("click", (e) => {
+        addConcertButtons[i].addEventListener("click", (event) => {
             // create an object id that identifies when the specific button being clicked (that's why we use target.dataset.id)
-            let id = e.target.dataset.id
+            let id = event.target.dataset.id
             // create a quantity object that will be later used to identify the button being clicked - previous element sibling - the following element is the add to wishlist button
             let quantity = Number(addConcertButtons[i].previousElementSibling.value) // add number in the front because we want to concert the integer into a number and not keep it
 
@@ -30,7 +30,7 @@ function addConcertsToWishlist() {
                     listItem = { ...concerts[i], quantity: 0, owner: currentUser } // ... are called the REST parameter. It create a "copy" of the object with the identical properties
                     // we add two properties to the copy of the concert by index: quantity and the owner 
                     //(here we set the owner to coincide witht the currentUser - that's why at the top of the page we get the loggedInUser from local storage)
-                    e.target.disabled = true
+                    // e.target.disabled = true
                 }
             }
 
@@ -44,9 +44,12 @@ function addConcertsToWishlist() {
             // we set an index object equal to the index of the wishlist
             for (let i = 0; i < wishlist.length; i++) {
                 // if the wishlist id of the concert present in the wishlist matches the id of the add button being clicked
+               // the wishlist is a list contaning listItem, each one possess an id and and owner (and other properties),
+               // so when we call wishlist[i].id we can call the id property because the line item possess an id property (same reasoning for the owner property) 
                 if (wishlist[i].id === id && wishlist[i].owner === currentUser) {
+                    // wishlist[i].id because we know that the wishes being add to the wishlist will have an id
                     exists = true // the concert is present
-                    index = i // refers alwasy to some i - index
+                    index = i // refers alwasy to some i - index - overwrite i
                 }
             }
             // here, if the concert already exists, then for that targeted concert, we have to increment the quantity by the number of tickets being added
@@ -55,7 +58,7 @@ function addConcertsToWishlist() {
                 // wishlist[index] refers to the array of concerts present in the wishlist itself, so we can no longer use i as index, but our newly defined index 
                 wishlist[index].quantity += quantity
             } else {
-                // or if if was not present in the wishlist
+                // or if if was not present in the wishlist we add the copy of the concert with the number of tickets equal to those selected on the dom
                 listItem.quantity = quantity
                 // we add the item to the wishlist
                 wishlist.push(listItem)
