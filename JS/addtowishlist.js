@@ -16,7 +16,7 @@ function addConcertsToWishlist() {
         //add an event listener that triggers when the user clicks on the button
         addConcertButtons[i].addEventListener("click", (event) => {
             // create an object id that identifies when the specific button being clicked (that's why we use target.dataset.id)
-            let id = event.target.dataset.id
+            let IdButtonClicked = event.target.dataset.id
             // create a quantity object that will be later used to identify the button being clicked - previous element sibling - the following element is the add to wishlist button
             let quantity = Number(addConcertButtons[i].previousElementSibling.value) // add number in the front because we want to concert the integer into a number and not keep it
 
@@ -25,7 +25,7 @@ function addConcertsToWishlist() {
             // create a loop through the list of concerts
             for (let i = 0; i < concerts.length; i++) {
                 // if statement -> if the specific concert's id exactly matches the id of the button being clicked by the user
-                if (concerts[i].id === id) {
+                if (concerts[i].id === IdButtonClicked) {
 
                     listItem = { ...concerts[i], quantity: 0, owner: currentUser } // ... are called the REST parameter. It create a "copy" of the object with the identical properties
                     // we add two properties to the copy of the concert by index: quantity and the owner 
@@ -46,10 +46,11 @@ function addConcertsToWishlist() {
                 // if the wishlist id of the concert present in the wishlist matches the id of the add button being clicked
                // the wishlist is a list contaning listItem, each one possess an id and and owner (and other properties),
                // so when we call wishlist[i].id we can call the id property because the line item possess an id property (same reasoning for the owner property) 
-                if (wishlist[i].id === id && wishlist[i].owner === currentUser) {
+                if (wishlist[i].id === IdButtonClicked && wishlist[i].owner === currentUser) {
                     // wishlist[i].id because we know that the wishes being add to the wishlist will have an id
                     exists = true // the concert is present
                     index = i // refers alwasy to some i - index - overwrite i
+                    // "index" of the specific ith concert being selected
                 }
             }
             // here, if the concert already exists, then for that targeted concert, we have to increment the quantity by the number of tickets being added
